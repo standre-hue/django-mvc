@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load tailwind_filters %}
+<h4>Update an author</h4>
+<div class="w-1/2">
+<form method="post">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <input class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit" value="Save" />
+ </form>
+ </div>
+{% endblock %}

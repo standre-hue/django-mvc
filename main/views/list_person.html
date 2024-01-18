@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load tailwind_filters %}
+<h4>Authors</h4>
+<button class="bg-blue-500 p-1 text-white">Add an author</button>
+<div class="">
+
+    <table class="table-auto">
+  <thead>
+    <tr>
+      <th class="px-4 py-2">Name</th>
+      <th class="px-4 py-2">Age</th>
+      <th>Action</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+        {% for author in authors %}
+        <tr>
+      <td class="border px-4 py-2">{{ author.name }}</td>
+      <td class="border px-4 py-2">{{ author.age }}</td>
+      <td> <a href="{% url 'update-person' author.pk %}"><button class="bg-green-500 p-1 text-white">Modify</button></a> <button class="bg-red-500 p-1 text-white">delete</button> </td>
+       {% endfor %}
+    </tr>
+
+  </tbody>
+</table>
+
+ </div>
+{% endblock %}
